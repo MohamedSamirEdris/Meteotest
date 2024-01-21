@@ -18,7 +18,7 @@ interface StationMapProps {
     };
   } | null;
 
-  clickedCoordinates: [number, number];
+  clickedCoordinates: [number, number] | null;
 }
 
 const StationMap = ({ selectedStation, clickedCoordinates }: StationMapProps) => {

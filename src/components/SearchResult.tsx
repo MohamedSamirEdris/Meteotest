@@ -7,7 +7,6 @@ import { useState } from 'react';
 
 interface SearchResultProps {
   selectedStation: Station | null;
-  onStationClick: (coordinates: [number, number]) => void;
 }
 
 const SearchResult = ({
