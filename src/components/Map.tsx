@@ -18,11 +18,10 @@ interface StationMapProps {
     };
   } | null;
 
-  clickedCoordinates: any;
+  clickedCoordinates: [number, number];
 }
 
 const StationMap = ({ selectedStation, clickedCoordinates }: StationMapProps) => {
-  console.log("🚀 ~ StationMap ~ clickedCoordinates:", clickedCoordinates)
   const [mapCenter, setMapCenter] = useState<[number, number]>([
     46.8182, 8.2275,
   ]);
