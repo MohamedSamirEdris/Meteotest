@@ -12,7 +12,7 @@ interface SearchResultProps {
 const SearchResult = ({
   selectedStation,
 }: SearchResultProps) => {
-  const [clickedCoordinates, setClickedCoordinates] = useState<[number, number] | null>(null);
+  const [clickedCoordinates, setClickedCoordinates] = useState<[number, number] >();
 
   const handleStationClick = () => {
     if (selectedStation) {

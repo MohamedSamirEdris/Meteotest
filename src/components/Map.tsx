@@ -18,14 +18,15 @@ interface StationMapProps {
     };
   } | null;
 
-  clickedCoordinates: [number, number] | null;
+  clickedCoordinates: [number, number];
 }
 
-const StationMap = ({ selectedStation, clickedCoordinates }: StationMapProps) => {
+const StationMap = ({ selectedStation, clickedCoordinates  }: StationMapProps) => {
   const [mapCenter, setMapCenter] = useState<[number, number]>([
     46.8182, 8.2275,
   ]);
 
+  
   
   useEffect(() => {
     if (clickedCoordinates) {
@@ -60,8 +61,8 @@ const StationMap = ({ selectedStation, clickedCoordinates }: StationMapProps) =>
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      {selectedStation && (
-        <Marker position={selectedStation.geometry.coordinates}>
+      {clickedCoordinates && (
+        <Marker position={clickedCoordinates}>
           <Popup>{selectedStation.properties.name}</Popup>
         </Marker>
       )}
